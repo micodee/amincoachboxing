@@ -25,7 +25,7 @@ export default function Contact({ currentTheme, lang }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const phone = '085716665853';
+    const phone = '6285716665853';
     const text = `Nama: ${form.nama}\nDomisili: ${form.domisili}\nPesan: ${form.pesan}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');

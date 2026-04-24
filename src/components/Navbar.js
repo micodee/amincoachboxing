@@ -104,7 +104,7 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
       <div style={{ ...containerStyle, display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
         {/* Brand */}
         <a href="#hero" style={brandStyle} aria-label="Go to top">
-          FitPro
+          Aminudin
         </a>
 
         {/* Desktop nav links */}

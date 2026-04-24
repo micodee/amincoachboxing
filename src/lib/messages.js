@@ -81,9 +81,9 @@ const messages = {
       domisiliPlaceholder: 'Domisili',
       messagePlaceholder: 'Pesan Anda',
       submit: 'Kirim Pesan',
-      phone: '+62 812-3456-7890',
-      email: 'trainer@example.com',
-      location: 'Jakarta, Indonesia',
+      phone: '+62 857-1666-5853',
+      email: 'aminudin@gmail.com',
+      location: 'ASTA GYM Sentul, Bogor, Indonesia',
     },
     certificates: {
       title: 'Sertifikasi',
@@ -141,7 +141,7 @@ const messages = {
         },
         {
           q: 'Di mana lokasi latihan berlangsung?',
-          a: 'Latihan bisa dilakukan di gym rekanan kami di Jakarta, atau sesi home visit ke lokasi Anda. Tersedia juga sesi online via video call.',
+          a: 'Latihan bisa dilakukan di ASTA GYM Sentul di Bogor, atau sesi private home visit ke lokasi Anda.',
         },
         {
           q: 'Berapa biaya per sesi?',
@@ -240,9 +240,9 @@ const messages = {
       domisiliPlaceholder: 'Domicile / City',
       messagePlaceholder: 'Your Message',
       submit: 'Send Message',
-      phone: '+62 812-3456-7890',
-      email: 'trainer@example.com',
-      location: 'Jakarta, Indonesia',
+      phone: '+62 857-1666-5853',
+      email: 'aminudin@gmail.com',
+      location: 'ASTA GYM Sentul, Bogor, Indonesia',
     },
     certificates: {
       title: 'Certifications',
@@ -300,7 +300,7 @@ const messages = {
         },
         {
           q: 'Where do training sessions take place?',
-          a: 'Sessions can be held at our partner gym in Jakarta, or as home visits to your location. Online sessions via video call are also available.',
+          a: 'Sessions can be held at ASTA GYM Sentul in Bogor, or through private sessions at your home.',
         },
         {
           q: 'How much does each session cost?',

@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,7 +11,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -27,34 +31,64 @@ img {
 
 /* ── Mobile: hide desktop nav links, show hamburger ── */
 @media (max-width: 768px) {
-  .navbar-links { display: none !important; }
-  .navbar-hamburger { display: flex !important; }
+  .navbar-links {
+    display: none !important;
+  }
+  .navbar-hamburger {
+    display: flex !important;
+  }
 
-  /* About & Contact tetap 1 kolom */
-  .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-  .contact-grid { grid-template-columns: 1fr !important; }
-
-  /* Grid 2 kolom di mobile */
+  /* Grid 2 kolom untuk tampilan yang lebih modern dan ringkas di mobile */
   .services-grid,
   .portfolio-grid,
   .testimonials-grid,
   .cert-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
 
-  /* Item ganjil terakhir → full width */
-  .services-grid > *:last-child:nth-child(odd),
-  .portfolio-grid > *:last-child:nth-child(odd),
-  .testimonials-grid > *:last-child:nth-child(odd),
-  .cert-grid > *:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
+  /* About & Contact tetap 1 kolom karena kontennya lebih kompleks/panjang */
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Khusus sertifikat: Memastikan icon dan teks terpusat dan rapi dalam 2 kolom */
+  .cert-grid > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center;
+  }
+
+  /* Mengurangi padding card khusus di mobile agar konten tetap proporsional dalam 2 kolom */
+  .services-grid > div,
+  .portfolio-grid > div,
+  .testimonials-grid > div,
+  .cert-grid > div {
+    padding: 20px 12px !important;
+  }
+
+  /* Penyesuaian padding section di mobile agar tidak terlalu kosong */
+  section {
+    padding: 48px 0 !important;
+  }
+
+  /* Heading lebih proporsional di layar kecil */
+  h2 {
+    font-size: 28px !important;
   }
 }
 
 /* ── Desktop: hide hamburger ── */
 @media (min-width: 769px) {
-  .navbar-hamburger { display: none !important; }
-  .navbar-links { display: flex !important; }
+  .navbar-hamburger {
+    display: none !important;
+  }
+  .navbar-links {
+    display: flex !important;
+  }
 }
 
 /* ── Navbar mobile menu ── */
