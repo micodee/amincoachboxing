@@ -18,6 +18,8 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
     { key: 'services', href: '#services' },
     { key: 'portfolio', href: '#portfolio' },
     { key: 'testimonials', href: '#testimonials' },
+    { key: 'certificates', href: '#certificates' },
+    { key: 'faq', href: '#faq' },
     { key: 'contact', href: '#contact' },
   ];
 
@@ -66,7 +68,6 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
   };
 
   const hamburgerStyle = {
-    display: 'none',
     flexDirection: 'column',
     gap: '5px',
     cursor: 'pointer',
@@ -93,7 +94,6 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
     backdropFilter: 'blur(8px)',
     WebkitBackdropFilter: 'blur(8px)',
     padding: '16px 24px',
-    display: menuOpen ? 'flex' : 'none',
     flexDirection: 'column',
     gap: '16px',
     zIndex: 99,
@@ -108,7 +108,7 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
         </a>
 
         {/* Desktop nav links */}
-        <ul style={linksStyle} aria-label="Navigation links">
+        <ul style={linksStyle} className="navbar-links" aria-label="Navigation links">
           {navLinks.map(({ key, href }) => (
             <li key={key}>
               <a href={href} style={linkStyle}>
@@ -142,7 +142,7 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
             style={hamburgerStyle}
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle mobile menu"
-            aria-expanded={menuOpen}
+            aria-expanded={menuOpen ? 'true' : 'false'}
             className="navbar-hamburger"
           >
             <span style={barStyle} />
@@ -153,7 +153,11 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
       </div>
 
       {/* Mobile dropdown menu */}
-      <div style={mobileMenuStyle} aria-hidden={!menuOpen}>
+      <div
+        style={mobileMenuStyle}
+        className={`navbar-mobile-menu${menuOpen ? ' navbar-mobile-menu--open' : ''}`}
+        aria-hidden={menuOpen ? 'false' : 'true'}
+      >
         {navLinks.map(({ key, href }) => (
           <a
             key={key}
@@ -165,14 +169,6 @@ export default function Navbar({ currentTheme, lang, toggleTheme, toggleLang, is
           </a>
         ))}
       </div>
-
-      {/* Inline style for hamburger responsive visibility */}
-      <style>{`
-        @media (max-width: 768px) {
-          .navbar-hamburger { display: flex !important; }
-          .navbar-links { display: none !important; }
-        }
-      `}</style>
     </nav>
   );
 }

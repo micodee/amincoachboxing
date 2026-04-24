@@ -81,7 +81,7 @@ export default function About({ currentTheme, lang }) {
     backgroundColor: currentTheme.cardBg,
     border: `1px solid ${currentTheme.border}`,
     borderRadius: '8px',
-    aspectRatio: '4/5',
+    aspectRatio: '4/3',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -137,12 +137,6 @@ export default function About({ currentTheme, lang }) {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-        }
-      `}</style>
     </section>
   );
 }

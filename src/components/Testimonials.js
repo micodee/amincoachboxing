@@ -137,15 +137,6 @@ export default function Testimonials({ currentTheme, lang }) {
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .testimonials-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (min-width: 480px) and (max-width: 768px) {
-          .testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-      `}</style>
     </section>
   );
 }

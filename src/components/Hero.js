@@ -34,7 +34,7 @@ export default function Hero({ currentTheme, lang }) {
 
   const titleStyle = {
     color: currentTheme.text,
-    fontSize: 'clamp(40px, 6vw, 72px)',
+    fontSize: 'clamp(32px, 6vw, 72px)',
     fontWeight: '900',
     letterSpacing: '-0.03em',
     lineHeight: '1.05',
@@ -44,7 +44,7 @@ export default function Hero({ currentTheme, lang }) {
 
   const subtitleStyle = {
     color: currentTheme.textSecondary,
-    fontSize: '18px',
+    fontSize: 'clamp(15px, 2vw, 18px)',
     fontWeight: '400',
     lineHeight: '1.65',
     margin: '0 0 48px 0',

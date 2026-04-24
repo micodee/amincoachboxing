@@ -108,12 +108,6 @@ export default function Portfolio({ currentTheme, lang }) {
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .portfolio-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

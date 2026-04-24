@@ -17,6 +17,20 @@ import {
 export default function Contact({ currentTheme, lang }) {
   const t = messages[lang].contact;
   const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ nama: '', domisili: '', pesan: '' });
+
+  const handleChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phone = '085716665853';
+    const text = `Nama: ${form.nama}\nDomisili: ${form.domisili}\nPesan: ${form.pesan}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
+  };
 
   const sectionStyle = {
     ...getSectionStyle(currentTheme),
@@ -110,11 +124,6 @@ export default function Contact({ currentTheme, lang }) {
     marginBottom: '16px',
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   const contactItems = [
     { icon: '📞', label: 'Phone', value: t.phone },
     { icon: '✉️', label: 'Email', value: t.email },
@@ -168,8 +177,11 @@ export default function Contact({ currentTheme, lang }) {
                   </label>
                   <input
                     id="contact-name"
+                    name="nama"
                     type="text"
                     placeholder={t.namePlaceholder}
+                    value={form.nama}
+                    onChange={handleChange}
                     required
                     style={getInputStyle(currentTheme)}
                     aria-required="true"
@@ -177,15 +189,18 @@ export default function Contact({ currentTheme, lang }) {
                 </div>
                 <div>
                   <label
-                    htmlFor="contact-email"
+                    htmlFor="contact-domisili"
                     style={{ ...getBodyTextStyle(currentTheme), fontSize: '13px', fontWeight: '600', display: 'block', marginBottom: '6px' }}
                   >
-                    {t.emailPlaceholder}
+                    {t.domisiliPlaceholder}
                   </label>
                   <input
-                    id="contact-email"
-                    type="email"
-                    placeholder={t.emailPlaceholder}
+                    id="contact-domisili"
+                    name="domisili"
+                    type="text"
+                    placeholder={t.domisiliPlaceholder}
+                    value={form.domisili}
+                    onChange={handleChange}
                     required
                     style={getInputStyle(currentTheme)}
                     aria-required="true"
@@ -200,7 +215,10 @@ export default function Contact({ currentTheme, lang }) {
                   </label>
                   <textarea
                     id="contact-message"
+                    name="pesan"
                     placeholder={t.messagePlaceholder}
+                    value={form.pesan}
+                    onChange={handleChange}
                     required
                     style={getTextareaStyle(currentTheme)}
                     aria-required="true"
@@ -214,12 +232,6 @@ export default function Contact({ currentTheme, lang }) {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .contact-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

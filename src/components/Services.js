@@ -117,7 +117,6 @@ export default function Services({ currentTheme, lang }) {
         @media (min-width: 480px) and (max-width: 768px) {
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-      `}</style>
-    </section>
+      `}</style>    </section>
   );
 }

@@ -6,7 +6,7 @@ export function getContainerStyle(theme) {
   return {
     maxWidth: '1100px',
     margin: '0 auto',
-    padding: '0 24px',
+    padding: '0 16px',
     width: '100%',
     boxSizing: 'border-box',
   };
